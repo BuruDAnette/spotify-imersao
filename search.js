@@ -24,11 +24,11 @@ function hidePlaylists() {
   playlistContainer.classList.add("hidden");
 }
 
-searchInput.addEventListener("input", function () {
+document.addEventListener("input", function () {
   const searchTerm = searchInput.value.toLowerCase();
   if (searchTerm === "") {
+    resultPlaylist.classList.remove("hidden");
     resultArtist.classList.add("hidden");
-    playlistContainer.classList.remove("hidden");
     return;
   }
   requestApi(searchTerm);
